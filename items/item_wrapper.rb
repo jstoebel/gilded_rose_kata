@@ -19,17 +19,17 @@ class ItemWrapper
 
   private
 
-  # set wrapped data's quality
-  # disalow vlaues > 50 and < 0
-  def quality=(amount)
-    new_amount = if amount.negative?
-                   0
-                 elsif amount > 50
-                   50
-                 else
-                   amount
-                 end
-    @data.quality = new_amount
+  # update items quality. A positive value for `amount` increases the value
+  # and a negative value decreases` it
+  def update_quality_by(amount)
+    new_quality = quality + amount
+    @data.quality = if new_quality.negative?
+                      0
+                    elsif new_quality > 50
+                      50
+                    else
+                      new_quality
+                    end
   end
 
   def decrease_sell_in
