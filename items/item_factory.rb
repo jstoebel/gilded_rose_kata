@@ -1,6 +1,6 @@
 Dir['items/*.rb'].each { |file| require file }
 
-class ItemBuilder
+class ItemFactory
   def self.build(item)
     case item.name
     when 'NORMAL ITEM'                               then NormalItem.new(item)

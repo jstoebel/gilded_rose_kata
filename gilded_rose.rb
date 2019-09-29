@@ -1,8 +1,8 @@
-require 'items/item_builder'
+require 'items/item_factory'
 
 def update_quality(items)
   items.each do |item|
-    wrapped_item = ItemBuilder.build(item)
+    wrapped_item = ItemFactory.build(item)
     wrapped_item.update_quality
   end
 end
