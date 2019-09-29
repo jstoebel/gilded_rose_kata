@@ -7,6 +7,7 @@ class ItemBuilder
     when 'Aged Brie'                                 then Brie.new(item)
     when 'Sulfuras, Hand of Ragnaros'                then Sulfuras.new(item)
     when 'Backstage passes to a TAFKAL80ETC concert' then BackstagePass.new(item)
+    when 'Conjured Mana Cake'                        then Conjured.new(item)
     end
   end
 end
